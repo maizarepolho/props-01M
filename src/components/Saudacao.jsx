@@ -21,10 +21,10 @@ function Saudacao(props) {
   // Dica: descomente a linha abaixo, salve e abra o Console do navegador (F12).
   // Você vai ver que "props" é só um objeto JavaScript comum!
   // console.log(props)
-
+ 
   return (
     <p>
-      Olá, <strong>{props.nome}</strong>! Seja bem-vindo(a) à aula de React.
+      Olá, <strong>{props.nome}</strong>! Seja bem-vindo(a).
     </p>
   )
 }
