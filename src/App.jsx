@@ -20,6 +20,13 @@ import CartaoAluno from './components/CartaoAluno.jsx'
 import Produto from './components/Produto.jsx'
 import Botao from './components/Botao.jsx'
 
+const turma= [
+  { id: 1, nome: 'Bia',   curso: 'Front-end', idade: 18, foto: 'https://i.pravatar.cc/150?img=5'  },
+  { id: 2, nome: 'Davi',  curso: 'Back-end',  idade: 19, foto: 'https://i.pravatar.cc/150?img=8'  },
+  { id: 3, nome: 'Luana', curso: 'Mobile',    idade: 17, foto: 'https://i.pravatar.cc/150?img=9'  },
+]
+
+
 function App() {
   return (
     <div className="container">
@@ -33,12 +40,15 @@ function App() {
       <section className="parte">
         <h2>Parte 1 - Minha primeira prop</h2>
 
-        <Saudacao nome="Maria" />
-        <Saudacao nome="João" />
+        <Saudacao nome="Rebeca" />
+        <Saudacao nome="Pedro" />
 
         {/* ✏️ TAREFA 1.1
             Adicione mais um <Saudacao /> aqui embaixo com o SEU nome.  */}
-
+      <section className='parte'>
+        <h2> Parte 2 - Meu nome</h2>
+        <Saudacao nome="Maiza"/>
+      </section>
         {/* ✏️ TAREFA 1.2
             O que acontece se você usar <Saudacao /> SEM a prop nome?
             Teste aqui e anote a resposta neste comentário:
@@ -55,19 +65,28 @@ function App() {
 
         <div className="linha">
           <CartaoAluno
-            nome="Ana Souza"
-            curso="Desenvolvimento de Sistemas"
-            idade={17}
-            foto="https://i.pravatar.cc/150?img=47"
+            nome="Rebeca"
+            curso="Ciencia da computação"
+            idade={19}
+            foto="https://i.pravatar.cc/150?img=12 "
           />
 
           {/* ✏️ TAREFA 2.4
               Complete este cartão: adicione as props idade e foto.
               Para a foto, você pode usar: https://i.pravatar.cc/150?img=12  */}
-          <CartaoAluno nome="Carlos Lima" curso="Front-end" />
-
+          <CartaoAluno 
+          nome="Mateus" 
+          curso="Front-end"
+          idade={20} 
+          foto=" https://i.pravatar.cc/150?img=12 "/>
+             
           {/* ✏️ TAREFA 2.5
               Crie um terceiro <CartaoAluno /> com os SEUS dados.          */}
+              <CartaoAluno
+              nome="Maiza"
+              curso= "TI"
+              idade={15}
+              foto= " https://i.pravatar.cc/150?img=12 "/>
         </div>
       </section>
 
@@ -89,7 +108,8 @@ function App() {
 
           {/* ✏️ TAREFA 3.5
               Crie um produto em promoção usando a forma curta:
-              <Produto nome="..." preco={...} emPromocao />                */}
+              <Produto nome="..." preco={...} emPromocao />              */}
+               <Produto nome="Paçocas 24''" preco={908} />
         </div>
       </section>
 
@@ -108,9 +128,14 @@ function App() {
             Excluir
           </Botao>
 
+          <Botao cor="verde" aoClicar={()  => alert('Formulário enviado!')}>
+             Enviar
+          </Botao>
+
           {/* ✏️ TAREFA 4.3
               Crie um botão VERDE com o texto "Enviar" que, ao ser clicado,
               mostre um alert com a mensagem "Formulário enviado!".        */}
+
         </div>
       </section>
 
@@ -141,13 +166,21 @@ function App() {
                  ))}
 
             Por que precisa da prop "key"? Pesquise e responda:
-            Resposta: ...
+            Resposta: serve basicamente para identificar de forma única cada elemento em um conjunto
           ============================================================ */}
+           {turma.map((aluno) => (
+                   <CartaoAluno
+                     key={aluno.id}
+                     nome={aluno.nome}
+                   />
+                 ))}
+
+
       <section className="parte">
         <h2>Parte 5 - Desafio: lista de alunos</h2>
 
         <div className="linha">
-          {/* ✏️ Escreva o turma.map(...) aqui */}
+          {turma.map}
         </div>
       </section>
     </div>
